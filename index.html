@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Tren Teknologi Informasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 1.25rem auto;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #ef4444, #3b82f6);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f1f5f9;
+        }
+
+        .profile-card h1 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.35rem;
+        }
+
+        .profile-card .nim {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-card .university {
+            font-size: 0.95rem;
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Menu List Cards */
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .menu-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .menu-item:hover {
+            border-color: #cbd5e1;
+            background-color: #f8fafc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* Modal / Content View Styling (Jika ingin konten muncul saat diklik) */
+        .content-view {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .content-view.active {
+            display: block;
+        }
+
+        .content-view h2 {
+            color: #2563eb;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-view ul {
+            padding-left: 1.25rem;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .content-view li {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-btn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- HALAMAN UTAMA (Profil & Menu List) -->
+        <div id="home-view">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <!-- Ganti link gambar di bawah dengan foto kamu, atau biarkan pakai foto dari contoh -->
+                    <img src="pfpQ.jpeg" alt="Queena Kaila Alyndra" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'">
+                </div>
+                <h1>Queena Kaila Alyndra</h1>
+                <div class="nim">NIM: 2611500386</div>
+                <div class="university">Universitas Budi Luhur</div>
+            </div>
+
+            <!-- List Menu Rangkuman -->
+            <div class="section-title">
+                <span>📚</span> Rangkuman Materi
+            </div>
+
+            <div class="menu-list">
+                <a href="#" class="menu-item" onclick="showModule(1)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 1
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(2)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 2
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(3)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 3
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(4)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 4
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(5)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 5
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(6)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 6
+                </a>
+                <a href="#" class="menu-item" onclick="showModule(7)">
+                    <span class="menu-icon">📄</span> Rangkuman Materi 7
+                </a>
+            </div>
+        </div>
+
+        <!-- HALAMAN KONTEN RANGKUMAN (Akan muncul saat tombol diklik) -->
+        <div id="module-view" class="content-view">
+            <h2 id="module-title">Judul Modul</h2>
+            <div id="module-content">
+                <!-- Isi materi akan masuk otomatis lewat JavaScript -->
+            </div>
+            <button class="back-btn" onclick="showHome()">← Kembali ke Menu Utama</button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Tugas Tren Teknologi Informasi
+    </footer>
+
+    <script>
+        const modulesData = {
+            1: {
+                title: "Modul 1: Introducing Today’s TechnologIes: Computers, Devices, and the Web",
+                content: `<ul>
+                    <p style="text-align: justify;">Teknologi informasi mencakup berbagai perangkat dan teknologi yang digunakan untuk mengolah, menyimpan, dan menyampaikan informasi. Komputer bekerja melalui proses input, processing, output, dan storage. Perangkat yang digunakan antara lain laptop, desktop, tablet, smartphone, server, perangkat game, dan perangkat lainnya.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Data merupakan fakta yang belum diproses, sedangkan informasi merupakan data yang telah diolah sehingga memiliki makna. Komputer menggunakan berbagai perangkat input seperti keyboard, mouse, scanner, stylus, mikrofon, dan webcam. Hasil pengolahan ditampilkan melalui perangkat output seperti monitor, printer, dan speaker.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Internet merupakan jaringan global yang menghubungkan berbagai perangkat dan pengguna. World Wide Web (WWW) menyediakan halaman dan website yang dapat diakses menggunakan browser. Search engine digunakan untuk mencari informasi di Internet. Internet juga menyediakan layanan seperti email, chat, instant messaging, video conference, VoIP, dan FTP.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Komputer memiliki berbagai komponen seperti motherboard, processor, memory, dan storage. Processor berfungsi menjalankan instruksi dan memiliki bagian seperti Control Unit dan Arithmetic Logic Unit (ALU). Komputer juga menggunakan sistem bilangan seperti desimal, biner, oktal, dan heksadesimal untuk merepresentasikan data.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Software terdiri dari sistem operasi dan berbagai aplikasi yang membantu pengguna melakukan pekerjaan tertentu. Terdapat aplikasi produktivitas, multimedia, komunikasi, pendidikan, hiburan, serta berbagai security tools seperti antivirus, firewall, dan anti-spam.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Penggunaan teknologi memiliki risiko seperti malware, cybercrime, pencurian data, dan masalah privasi. Oleh karena itu, pengguna perlu menerapkan keamanan digital, menjaga informasi pribadi, memahami etika penggunaan teknologi, serta menggunakan Internet secara bertanggung jawab.</p>
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;">Perangkat komputer juga dapat terhubung melalui jaringan menggunakan teknologi seperti Wi-Fi, Bluetooth, dan NFC. Selain kemampuan teknologi, penggunaan komputer perlu memperhatikan keamanan hardware dan kesehatan pengguna, termasuk posisi kerja dan ergonomi. 
+                    <p>ㅤ</p>
+                    <p style="text-align: justify;"><strong>Kesimpulannya,</strong> teknologi informasi terdiri dari perangkat keras, perangkat lunak, jaringan, Internet, dan berbagai layanan digital yang saling mendukung. Pemahaman terhadap teknologi perlu diimbangi dengan kemampuan menjaga keamanan, privasi, etika, dan penggunaan teknologi secara bertanggung jawab.
+                    </ul>`
+
+            },
+            2: {
+                title: "Rangkuman Materi 2 (Modul 2: Connecting and Communicating Online)",
+                content: `<ul>
+                    <li>Evolusi internet bermula dari ARPANET pada September 1969 untuk berbagi informasi yang tahan terhadap kerusakan jaringan[cite: 2].</li>
+                    <li>Setiap perangkat memerlukan alamat IP unik dan nama domain agar dapat saling terhubung[cite: 2].</li>
+                    <li>Penerapan netiket (etika komunikasi online) sangat penting, seperti menghindari penggunaan huruf kapital seluruhnya yang dianggap berteriak[cite: 2].</li>
+                </ul>`
+            },
+            3: {
+                title: "Rangkuman Materi 3 (Modul 3: Computers and Mobile Devices)",
+                content: `<ul>
+                    <li>Kategori komputer mencakup laptop, tablet, desktop, server, terminal (seperti ATM), dan superkomputer[cite: 3].</li>
+                    <li>Komputasi awan (cloud computing) menyediakan penyimpanan serta sumber daya yang diakses secara fleksibel lewat internet[cite: 3].</li>
+                    <li>Ergonomi tempat kerja penting untuk mencegah cedera fisik (RSI) dan sindrom penglihatan komputer (CVS)[cite: 3].</li>
+                </ul>`
+            },
+            4: {
+                title: "Rangkuman Materi 4 (Modul 4: Programs and Apps)",
+                content: `<ul>
+                    <li>Distribusi perangkat lunak meliputi ritel, kustom, web apps, mobile apps, shareware, freeware, dan open source[cite: 4].</li>
+                    <li>Aplikasi produktivitas mencakup pengolah kata, lembar sekerja (spreadsheet), presentasi, dan grafik[cite: 4].</li>
+                    <li>Alat manajemen sistem dan keamanan mencakup antivirus, firewall pribadi, serta pembersih malware[cite: 4].</li>
+                </ul>`
+            },
+            5: {
+                title: "Rangkuman Materi 5 (Modul 5: Digital Security, Ethics, and Privacy)",
+                content: `<ul>
+                    <li>Keamanan digital melindungi perangkat keras, data, dan informasi dari ancaman kejahatan siber[cite: 5].</li>
+                    <li>Jenis peretas meliputi White Hat (etis), Black Hat (ilegal), Grey Hat, Script Kiddie, dan Hacktivist[cite: 5].</li>
+                    <li>Ancaman siber meliputi virus, worm, trojan, spyware, phishing, hingga serangan DoS[cite: 5].</li>
+                </ul>`
+            },
+            6: {
+                title: "Rangkuman Materi 6 (Komponen Komputer & Representasi Data)",
+                content: `<ul>
+                    <li>Komponen internal mencakup Motherboard, CPU (Unit Kontrol & ALU), serta Memori (RAM yang volatile dan ROM yang non-volatile)[cite: 6].</li>
+                    <li>Siklus mesin CPU meliputi tahapan: <em>fetch, decode, execute, dan store</em>[cite: 6].</li>
+                    <li>Representasi data menggunakan sistem bilangan biner (basis 2: angka 0 dan 1), serta sistem desimal, oktal, dan heksadesimal[cite: 6].</li>
+                </ul>`
+            },
+            7: {
+                title: "Rangkuman Materi 7 (Input dan Output)",
+                content: `<ul>
+                    <li>Perangkat masukan (input) mencakup keyboard, mouse, touchpad, stylus, mikrofon, pemindai, dan pembaca optik[cite: 7].</li>
+                    <li>Perangkat keluaran (output) mencakup monitor/display, printer (ink-jet, laser, 3D), headphone, dan proyektor[cite: 7].</li>
+                </ul>`
+            }
+        };
+
+        function showModule(moduleNumber) {
+            const data = modulesData[moduleNumber];
+            document.getElementById('module-title').innerText = data.title;
+            document.getElementById('module-content').innerHTML = data.content;
+
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('module-view').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showHome() {
+            document.getElementById('module-view').classList.remove('active');
+            document.getElementById('home-view').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
